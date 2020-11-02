@@ -2,50 +2,31 @@
 /* eslint-disable */
 /**
 * @param {string} source
-* @returns {any}
+* @returns {Source}
 */
-export function get_tokens(source: string): any;
+export function from_source(source: string): Source;
 /**
 */
-export class LocalToken {
+export class Source {
   free(): void;
 /**
-* @returns {number}
+* @returns {any}
 */
-  column: number;
-/**
-* @returns {number}
-*/
-  length: number;
-/**
-* @returns {number}
-*/
-  line: number;
+  get_tokens(): any;
 /**
 * @returns {any}
 */
-  readonly literal: any;
-/**
-* @returns {string}
-*/
-  readonly token_type: string;
+  get_statements(): any;
 }
 
 export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
 
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
-  readonly __wbg_localtoken_free: (a: number) => void;
-  readonly __wbg_get_localtoken_line: (a: number) => number;
-  readonly __wbg_set_localtoken_line: (a: number, b: number) => void;
-  readonly __wbg_get_localtoken_column: (a: number) => number;
-  readonly __wbg_set_localtoken_column: (a: number, b: number) => void;
-  readonly __wbg_get_localtoken_length: (a: number) => number;
-  readonly __wbg_set_localtoken_length: (a: number, b: number) => void;
-  readonly localtoken_token_type: (a: number, b: number) => void;
-  readonly localtoken_literal: (a: number) => number;
-  readonly get_tokens: (a: number, b: number) => number;
-  readonly __wbindgen_free: (a: number, b: number) => void;
+  readonly __wbg_source_free: (a: number) => void;
+  readonly source_get_tokens: (a: number) => number;
+  readonly source_get_statements: (a: number) => number;
+  readonly from_source: (a: number, b: number) => number;
   readonly __wbindgen_malloc: (a: number) => number;
   readonly __wbindgen_realloc: (a: number, b: number, c: number) => number;
 }

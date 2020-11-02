@@ -1,4 +1,3 @@
-import { TokenSet } from './snippets/tutara-wasm-2f0601b11b4a85ba/token-set.js';
 
 let wasm;
 
@@ -31,14 +30,6 @@ function addHeapObject(obj) {
 
     heap[idx] = obj;
     return idx;
-}
-
-let cachegetInt32Memory0 = null;
-function getInt32Memory0() {
-    if (cachegetInt32Memory0 === null || cachegetInt32Memory0.buffer !== wasm.memory.buffer) {
-        cachegetInt32Memory0 = new Int32Array(wasm.memory.buffer);
-    }
-    return cachegetInt32Memory0;
 }
 
 function getObject(idx) { return heap[idx]; }
@@ -111,21 +102,21 @@ function passStringToWasm0(arg, malloc, realloc) {
 }
 /**
 * @param {string} source
-* @returns {any}
+* @returns {Source}
 */
-export function get_tokens(source) {
+export function from_source(source) {
     var ptr0 = passStringToWasm0(source, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     var len0 = WASM_VECTOR_LEN;
-    var ret = wasm.get_tokens(ptr0, len0);
-    return takeObject(ret);
+    var ret = wasm.from_source(ptr0, len0);
+    return Source.__wrap(ret);
 }
 
 /**
 */
-export class LocalToken {
+export class Source {
 
     static __wrap(ptr) {
-        const obj = Object.create(LocalToken.prototype);
+        const obj = Object.create(Source.prototype);
         obj.ptr = ptr;
 
         return obj;
@@ -135,68 +126,20 @@ export class LocalToken {
         const ptr = this.ptr;
         this.ptr = 0;
 
-        wasm.__wbg_localtoken_free(ptr);
-    }
-    /**
-    * @returns {number}
-    */
-    get line() {
-        var ret = wasm.__wbg_get_localtoken_line(this.ptr);
-        return ret >>> 0;
-    }
-    /**
-    * @param {number} arg0
-    */
-    set line(arg0) {
-        wasm.__wbg_set_localtoken_line(this.ptr, arg0);
-    }
-    /**
-    * @returns {number}
-    */
-    get column() {
-        var ret = wasm.__wbg_get_localtoken_column(this.ptr);
-        return ret >>> 0;
-    }
-    /**
-    * @param {number} arg0
-    */
-    set column(arg0) {
-        wasm.__wbg_set_localtoken_column(this.ptr, arg0);
-    }
-    /**
-    * @returns {number}
-    */
-    get length() {
-        var ret = wasm.__wbg_get_localtoken_length(this.ptr);
-        return ret >>> 0;
-    }
-    /**
-    * @param {number} arg0
-    */
-    set length(arg0) {
-        wasm.__wbg_set_localtoken_length(this.ptr, arg0);
-    }
-    /**
-    * @returns {string}
-    */
-    get token_type() {
-        try {
-            const retptr = wasm.__wbindgen_export_0.value - 16;
-            wasm.__wbindgen_export_0.value = retptr;
-            wasm.localtoken_token_type(retptr, this.ptr);
-            var r0 = getInt32Memory0()[retptr / 4 + 0];
-            var r1 = getInt32Memory0()[retptr / 4 + 1];
-            return getStringFromWasm0(r0, r1);
-        } finally {
-            wasm.__wbindgen_export_0.value += 16;
-            wasm.__wbindgen_free(r0, r1);
-        }
+        wasm.__wbg_source_free(ptr);
     }
     /**
     * @returns {any}
     */
-    get literal() {
-        var ret = wasm.localtoken_literal(this.ptr);
+    get_tokens() {
+        var ret = wasm.source_get_tokens(this.ptr);
+        return takeObject(ret);
+    }
+    /**
+    * @returns {any}
+    */
+    get_statements() {
+        var ret = wasm.source_get_statements(this.ptr);
         return takeObject(ret);
     }
 }
@@ -240,23 +183,15 @@ async function init(input) {
     }
     const imports = {};
     imports.wbg = {};
-    imports.wbg.__wbindgen_string_new = function(arg0, arg1) {
-        var ret = getStringFromWasm0(arg0, arg1);
+    imports.wbg.__wbindgen_json_parse = function(arg0, arg1) {
+        var ret = JSON.parse(getStringFromWasm0(arg0, arg1));
         return addHeapObject(ret);
-    };
-    imports.wbg.__wbindgen_number_new = function(arg0) {
-        var ret = arg0;
-        return addHeapObject(ret);
-    };
-    imports.wbg.__wbg_new_64d7a3fc415c6f5c = function() {
-        var ret = new TokenSet();
-        return addHeapObject(ret);
-    };
-    imports.wbg.__wbg_append_803e580e1ace5da5 = function(arg0, arg1) {
-        getObject(arg0).append(LocalToken.__wrap(arg1));
     };
     imports.wbg.__wbindgen_throw = function(arg0, arg1) {
         throw new Error(getStringFromWasm0(arg0, arg1));
+    };
+    imports.wbg.__wbindgen_rethrow = function(arg0) {
+        throw takeObject(arg0);
     };
 
     if (typeof input === 'string' || (typeof Request === 'function' && input instanceof Request) || (typeof URL === 'function' && input instanceof URL)) {
