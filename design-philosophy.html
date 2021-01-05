@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Design Philosophy | Tutara</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="icon-64x64.png" type="image/png" sizes="64x64">
+    <link rel="icon" href="icon-128x128.png" type="image/png" sizes="128x128">
+    <meta name="description" content="Tutara">
+    
+    <link rel="preload" href="/assets/css/0.styles.6d7aa173.css" as="style"><link rel="preload" href="/assets/js/app.7a9d6f10.js" as="script"><link rel="preload" href="/assets/js/2.d388fa14.js" as="script"><link rel="preload" href="/assets/js/9.3465085c.js" as="script"><link rel="prefetch" href="/assets/js/10.d3bda819.js"><link rel="prefetch" href="/assets/js/11.482a0adb.js"><link rel="prefetch" href="/assets/js/12.5fda2b4b.js"><link rel="prefetch" href="/assets/js/13.831b075f.js"><link rel="prefetch" href="/assets/js/14.a6ca5239.js"><link rel="prefetch" href="/assets/js/15.b12c16e4.js"><link rel="prefetch" href="/assets/js/16.0efc9fe9.js"><link rel="prefetch" href="/assets/js/17.391a7b54.js"><link rel="prefetch" href="/assets/js/18.6f8d2901.js"><link rel="prefetch" href="/assets/js/19.c959d4bb.js"><link rel="prefetch" href="/assets/js/20.018d16fe.js"><link rel="prefetch" href="/assets/js/21.e38c7527.js"><link rel="prefetch" href="/assets/js/22.ca09380e.js"><link rel="prefetch" href="/assets/js/3.90bde8e4.js"><link rel="prefetch" href="/assets/js/4.2259db8a.js"><link rel="prefetch" href="/assets/js/5.9143a1d0.js"><link rel="prefetch" href="/assets/js/6.148987f4.js"><link rel="prefetch" href="/assets/js/7.e9328055.js"><link rel="prefetch" href="/assets/js/8.ef3bd1db.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6d7aa173.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container no-sidebar"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Tutara</span></a> <div class="links"><!----> <nav class="nav-links can-hide"><div class="nav-item"><a href="/syntax/" class="nav-link">
+  Syntax
+</a></div><div class="nav-item"><a href="/samples.html" class="nav-link">
+  Samples
+</a></div><div class="nav-item"><a href="/design-philosophy.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Design
+</a></div><div class="nav-item"><a href="/try.html" class="nav-link">
+  Try it out
+</a></div> <a href="https://github.com/tutara/tutara" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/syntax/" class="nav-link">
+  Syntax
+</a></div><div class="nav-item"><a href="/samples.html" class="nav-link">
+  Samples
+</a></div><div class="nav-item"><a href="/design-philosophy.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Design
+</a></div><div class="nav-item"><a href="/try.html" class="nav-link">
+  Try it out
+</a></div> <a href="https://github.com/tutara/tutara" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="design-philosophy"><a href="#design-philosophy" class="header-anchor">#</a> Design Philosophy</h1> <p>Tutara is designed based on a set of requirements and ideas made by the
+developers of the language. This document is a list of these in non descriptive
+order.</p> <ul><li><p><strong>The language puts the developer in a position to write a scripts in a quick
+manner by supporting an easy and fast to write syntax.</strong></p> <p>A lot of keywords in the syntax are based on shorthands. A variable is either
+declared by writing <code>val</code> or <code>var</code>. This in combination with
+<a href="https://en.wikipedia.org/wiki/Type_inference" target="_blank" rel="noopener noreferrer">type inference<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> brings a fast
+way  of working with data in scripts. The language itself is statically typed
+to prevent bugs before execution of the code. When defining a lot of variables
+without a type it might become unclear wich type of data is stored there.
+By using static typing the interpreter knows the actual type of a variable and
+can provide information on what properties or methods are available on the
+type using autocomplete in the IDE.</p> <p>By providing a variety of syntactic sugar options. Developers can simplify
+their scripts a lot. Options like writing <code>foo += 1</code> instead of
+<code>foo = foo + 1</code> is an easy example of this. But this can become more complex
+like large if statements that can be rewritten using a match or a <code>loop {}</code>
+that is easier to read then <code>while(true) {}</code>. By allowing multiple ways of
+writing the same behavior a developer can create easier to read code which
+helps with the maintainability of a project.</p></li> <li><p><strong>Developers should be able to learn the language with ease.</strong></p> <p>The language can be classified as a C-like language as the basic syntax looks
+a lot like the C programming language. A lot of the popular languages in use
+today are similar in their syntax. From a general-purpose language like
+Python to an enterprise language like Java or C#. They all share a common set
+of syntactic features like looping, condition and expressions. Tutara follows
+this set with some small differences to make it easy to understand the
+language for developers.</p></li> <li><p><strong>Installing Tutara should be fast and straight forward.</strong></p> <p>The goal is for developers to install and configure Tutara with ease. We do
+not want complex installing processes where the developer has to set a
+variety of environment variables, download dependencies or change anything in
+the OS.</p> <p>It should be a plug and play style of system. You get the Tutara CLI and you
+can immediately write a script and execute it.</p></li> <li><p><strong>The goal of Tutara scripts is to automate small tasks</strong></p> <p>When using Tutara there should be a focus on automating simple tasks. All
+users have some form of task they execute by hand that can be automated. It
+might be hashing a certain value or renaming files and folders in the
+filesystem. Developers should be able to use Tutara script for solving these
+'time wasters'.</p></li> <li><p><strong>Scripts are written for a specific context in their respective
+environments.</strong></p> <p>When automating tasks you usually work with input data, perform some
+operations and get different data back. The principle here is that it works
+within a specified <em>context</em>. This can for example be an HTTP-context where
+the script has access to the HTTP request and response. The developer writes
+the script based on these parameters. Its important that contexts are
+versitile and can be expanded upon to use Tutara as an automation platform.</p></li> <li><p><strong>Scripts run in a sanbox within their environments and may have restricted
+capabilities.</strong></p> <p>Tutara is an interpreted language. Meaning it executes while reading scripts.
+It means that you only have to write the desired script which is passed to
+the CLI and it works. No additional configuration or handling of binaries is
+needed.</p> <p>On a surface level this may imply a drawback for the system. Scripts are text
+files that have to be converted into machine code when it is called. The
+platform can cache the machine code for faster execution by sending compiled
+scripts to the virtual machine.</p> <p>Scripts run within a specific context that gives acces to what it needs.
+Meaning if a script in the HTTP context needs access to the file system for
+certain reasons it has to specifically get this premission. When it does not
+have this permission it will throw runtime errors. This reduces the footprint
+of the script and adds an abritray layer of 'security' for the scripts.
+Platforms can optionally add configuration files to enable or disable
+permissions.</p></li> <li><p><strong>Tutara is Free and Open Source Software (FOSS) first.</strong></p> <p>In the current development ecosystem there are a lot of proprietary tools and
+large companies making software that is closed to the outside of the world. We
+believe that this is the correct way for our language. There are thousands of
+Open Source projects out there that are used every day by small developers and
+huge companies. We as a community should endorse these developers as their
+contributions to our field are extremely important for its survival.</p> <p>Therefor we made the inevitable decision to develop Tutara as Free and
+Open Source Software with a matching license.</p></li> <li><p><strong>Tutara is experimental until we consider it stable.</strong></p> <p>The project started out as a challenge to understand low level programming.
+Choices that were made in the past should be reconsidered when in doubt.
+Syntax may drastically change if deemed insufficient for the design
+philosophy.</p> <p>We're always open to honest feedback and appreciate all the help from
+third-parties. Even for bad decisions, we are also humans and we can make
+mistakes. We are always open for learning new concepts to improve our craft.</p></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">1/5/2021, 12:54:58 PM</span></div></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.7a9d6f10.js" defer></script><script src="/assets/js/2.d388fa14.js" defer></script><script src="/assets/js/9.3465085c.js" defer></script>
+  </body>
+</html>
